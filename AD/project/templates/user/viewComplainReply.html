@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>ViewComplainReply-ActivitySpotter</title>
+
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="../../static/userResource/css/style.min.css">
+	<link rel="stylesheet" href="../../static/userResource/css/custom.css">
+
+	<!-- Themify Icon -->
+	<link rel="stylesheet" href="../../static/userResource/css/themify-icons.css">
+
+	<!-- mCustomScrollbar -->
+	<link rel="stylesheet" href="../../static/userResource/css/jquery.mCustomScrollbar.min.css">
+
+	<!-- Waves Effect -->
+	<link rel="stylesheet" href="../../static/userResource/css/waves.min.css">
+
+	<!-- Sweet Alert -->
+	<link rel="stylesheet" href="../../static/userResource/css/sweetalert.css">
+
+	<!-- Data Tables -->
+	<link rel="stylesheet" href="../../static/userResource/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="../../static/userResource/css/responsive.bootstrap.min.css">
+
+</head>
+
+<body>
+
+    {% include 'user/menu.html' %}
+
+        {% include 'user/header.html' %}
+
+		<!-- /.header -->
+
+	<!-- /.main-menu -->
+
+
+	<!-- /.fixed-navbar -->
+
+	<!-- /#message-popup -->
+	<div id="wrapper">
+		<div class="main-content">
+			<div class="row small-spacing">
+				<div class="col-12">
+					<div class="box-content">
+						<h4 class="box-title">Complain Reply</h4>
+
+						<!-- /.box-title -->
+						<table id="example" class="table table-striped table-bordered display" style="width:100%">
+							<thead>
+								<tr>
+									<th>Replay Subject</th>
+                                    <th>Reply Message</th>
+                                    <th>Reply Date</th>
+                                    <th>Reply Time</th>
+                                    <th>Reply Attachment</th>
+
+								</tr>
+							</thead>
+							<tbody>
+                            {% for row in complainReplyVOList%}
+                                <tr>
+                                    <td>{{row['replySubject']}}</td>
+                                    <td>{{row['replyMessage']}}</td>
+                                    <td>{{row['replyDate']}}</td>
+                                    <td>{{row['replyTime']}}</td>
+                                    <th><a href="{{row['replyFilePath']}}{{row['replyFileName']}}" target="_blank">view</a></th>
+                                </tr>
+                            {% endfor %}
+							</tbody>
+						</table>
+					</div>
+					<!-- /.box-content -->
+				</div>
+				<!-- /.col-12 -->
+			</div>
+			<!-- /.row small-spacing -->
+		{% include 'user/footer.html' %}
+		</div>
+		<!-- /.main-content -->
+	</div><!--/#wrapper -->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+	<!--
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../../static/userResource/js/jquery.min.js"></script>
+		<script src="../../static/userResource/js/modernizr.min.js"></script>
+		<script src="../../static/userResource/js/bootstrap.min.js"></script>
+		<script src="../../static/userResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../../static/userResource/js/nprogress.js"></script>
+		<script src="../../static/userResource/js/sweetalert.min.js"></script>
+		<script src="../../static/userResource/js/waves.min.js"></script>
+		<!-- Sparkline Chart -->
+		<script src="../../static/userResource/js/jquery.sparkline.min.js"></script>
+		<script src="../../static/userResource/js/chart.sparkline.init.min.js"></script>
+
+		<!-- Data Tables -->
+		<script src="../../static/userResource/js/jquery.dataTables.min.js"></script>
+		<script src="../../static/userResource/js/dataTables.bootstrap4.min.js"></script>
+		<script src="../../static/userResource/js/dataTables.responsive.min.js"></script>
+		<script src="../../static/userResource/js/responsive.bootstrap.min.js"></script>
+		<script src="../../static/userResource/js/datatables.demo.min.js"></script>
+
+		<script src="../../static/userResource/js/main.min.js"></script>
+<script src="../../static/userResource/js/mycommon.js"></script>
+	</body>
+	</html>

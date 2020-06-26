@@ -1,0 +1,268 @@
+<html lang="en" class="js"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Invoice - Activity</title>
+
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="../../static/userResource/css/style.min.css">
+<link rel="stylesheet" href="../../static/userResource/css/custom.css">
+
+	<!-- Themify Icon -->
+	<link rel="stylesheet" href="../../static/userResource/css/themify-icons.css">
+
+	<!-- mCustomScrollbar -->
+	<link rel="stylesheet" href="../../static/userResource/css/jquery.mCustomScrollbar.min.css">
+
+	<!-- Waves Effect -->
+	<link rel="stylesheet" href="../../static/userResource/css/waves.min.css">
+
+	<!-- Sweet Alert -->
+	<link rel="stylesheet" href="../../static/userResource/css/sweetalert.css">
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+
+<body>
+    {% include 'user/menu.html' %}
+
+<!-- /.main-menu -->
+
+{% include 'user/header.html' %}
+
+<!-- /.fixed-navbar -->
+
+
+<!-- /#notification-popup -->
+
+<div id="message-popup" class="notice-popup js__toggle" data-space="75" style="height: 236px;">
+	<h2 class="popup-title">Recent Messages<a href="#" class="float-right text-danger">New message</a></h2>
+	<!-- /.popup-title -->
+	<div class="content mCustomScrollbar _mCS_3"><div id="mCSB_3" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_3_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+		<ul class="notice-list">
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-sm-1.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">John Doe</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">10 min</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-sm-3.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Harry Halen</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">15 min</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-sm-4.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Thomas Taylor</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">30 min</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-1.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Jennifer</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">45 min</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-sm-5.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Helen Candy</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">45 min</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-2.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Anna Cavan</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">1 hour ago</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar bg-success"><i class="fa fa-user"></i></span>
+					<span class="name">Jenny Betty</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">1 day ago</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="avatar"><img src="../../static/userResource/image/avatar-5.jpg" alt="" class="mCS_img_loaded"></span>
+					<span class="name">Denise Peterson</span>
+					<span class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere repellat voluptates.</span>
+					<span class="time">1 year ago</span>
+				</a>
+			</li>
+		</ul>
+		<!-- /.notice-list -->
+		<a href="#" class="notice-read-more">See more messages <i class="fa fa-angle-down"></i></a>
+	</div><div id="mCSB_3_scrollbar_vertical" class="mCSB_scrollTools mCSB_3_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 52px; top: 0px; display: block; max-height: 176px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+	<!-- /.content -->
+</div>
+<!-- /#message-popup -->
+<div id="wrapper">
+	<div class="main-content">
+		<div class="row small-spacing">
+			<div class="col-12">
+				<div class="invoice-box">
+					<table>
+						<tbody><tr class="top">
+							<td colspan="2">
+								<table>
+									<tbody><tr>
+										<td class="title">
+											<a href="#" class="logo">Ninja<span>Admin</span></a>
+										</td>
+
+										<td>
+											Invoice #: 123<br>
+											Created: January 1, 2015<br>
+											Due: February 1, 2015
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+
+						<tr class="information">
+							<td colspan="2">
+								<table>
+									<tbody><tr>
+										<td>
+											Next Step Webs, Inc.<br>
+											12345 Sunny Road<br>
+											Sunnyville, TX 12345
+										</td>
+
+										<td>
+											Acme Corp.<br>
+											John Doe<br>
+											john@example.com
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+
+						<tr class="heading">
+							<td>
+								Payment Method
+							</td>
+
+							<td>
+								Check #
+							</td>
+						</tr>
+
+						<tr class="details">
+							<td>
+								Check
+							</td>
+
+							<td>
+								1000
+							</td>
+						</tr>
+
+						<tr class="heading">
+							<td>
+								Item
+							</td>
+
+							<td>
+								Price
+							</td>
+						</tr>
+
+						<tr class="item">
+							<td>
+								Website design
+							</td>
+
+							<td>
+								$300.00
+							</td>
+						</tr>
+
+						<tr class="item">
+							<td>
+								Hosting (3 months)
+							</td>
+
+							<td>
+								$75.00
+							</td>
+						</tr>
+
+						<tr class="item last">
+							<td>
+								Domain name (1 year)
+							</td>
+
+							<td>
+								$10.00
+							</td>
+						</tr>
+
+						<tr class="total">
+							<td></td>
+
+							<td>
+							   Total: $385.00
+							</td>
+						</tr>
+					</tbody></table>
+					<div class="text-right margin-top-20">
+						<ul class="list-inline">
+							<li><button type="button" class="btn btn-default waves-effect waves-light"><i class="fa fa-print"></i> Print</button></li>
+							<li><button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /.invoice-box -->
+			</div>
+			<!-- /.col-12 -->
+		</div>
+		<!-- /.row small-spacing -->
+		{% include 'user/footer.html' %}
+
+	</div>
+	<!-- /.main-content -->
+</div><!--/#wrapper -->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="../../static/userResource/js/html5shiv.min.js"></script>
+		<script src="assets/script/respond.min.js"></script>
+	<![endif]-->
+	<!--
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../../static/userResource/js/jquery.min.js"></script>
+	<script src="../../static/userResource/js/modernizr.min.js"></script>
+	<script src="../../static/userResource/js/bootstrap.min.js"></script>
+	<script src="../../static/userResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../../static/userResource/js/nprogress.js"></script>
+	<script src="../../static/userResource/js/sweet-alert/sweetalert.min.js"></script>
+	<script src="../../static/userResource/js/waves/waves.min.js"></script>
+	<!-- Sparkline Chart -->
+	<script src="../../static/userResource/js/jquery.sparkline.min.js"></script>
+	<script src="../../static/userResource/js/chart.sparkline.init.min.js"></script>
+
+	<script src="../../static/userResource/js/main.min.js"></script>
+<script src="../../static/userResource/js/mycommon.js"></script>
+
+</body>
+</html>

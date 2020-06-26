@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Edit Package-Manage Packages</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../../static/adminResource/css/style.min.css">
+    <link rel="stylesheet" href="../../static/adminResource/css/custom.css">
+
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../../static/adminResource/css/themify-icons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="../../static/adminResource/css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="../../static/adminResource/css/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../static/adminResource/css/sweetalert.css">
+
+</head>
+
+<body>
+{% include 'admin/header.html' %}
+    <!-- /.header -->
+    {% include 'admin/menu.html' %}
+<!-- /.fixed-navbar -->
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-12">
+                <div class="box-content">
+                    <form data-toggle="validator" action="/admin/updatePackage" method="post">
+                        <div class="form-group"><label style="font-size: 20px">Edit Package</label><br><br>
+                             {%for row in packageVOList%}
+
+                            <input type="hidden" name="packageId" value="{{row['packageId']}}">
+                            <label for="packageName" class="control-label">Package Name</label>
+                            <input type="text" class="form-control" name="packageName" value="{{ row['packageName'] }}"  placeholder="Enter Package Name" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="packageDuration" class="control-label">Package Duration</label>
+                            <input type="text" class="form-control" id="packageDuration" value="{{ row['packageDuration'] }}"  name = 'packageDuration' placeholder="Enter Package Duration" required>
+                        </div>
+                          <div class="form-group">
+                            <label for="packagePrice" class="control-label">Package price</label>
+                            <input type="text" class="form-control" name="packagePrice" value="{{ row['packagePrice'] }}"  placeholder="Enter Package price" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-primary waves-effect waves-light">
+                        </div>
+
+                             {% endfor %}
+                    </form>
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row small-spacing -->
+        {% include 'admin/footer.html' %}
+    </div>
+    <!-- /.main-content -->
+</div><!--/#wrapper -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/adminResource/js/jquery.min.js"></script>
+<script src="../../static/adminResource/js/modernizr.min.js"></script>
+<script src="../../static/adminResource/js/bootstrap.min.js"></script>
+<script src="../../static/adminResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../static/adminResource/js/nprogress.js"></script>
+<script src="../../static/adminResource/js/sweetalert.min.js"></script>
+<script src="../../static/adminResource/js/waves.min.js"></script>
+<!-- Sparkline Chart -->
+<script src="../../static/adminResource/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResource/js/chart.sparkline.init.min.js"></script>
+
+<!-- Validator -->
+<script src="../../static/adminResource/js/validator.min.js"></script>
+
+<script src="../../static/adminResource/js/main.min.js"></script>
+<script src="../../static/adminResource/js/mycommon.js"></script>
+</body>
+</html>

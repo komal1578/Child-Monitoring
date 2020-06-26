@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Edit Profile-ActivitySpotter</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../../static/userResource/css/style.min.css">
+    <link rel="stylesheet" href="../../static/userResource/css/custom.css">
+
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../../static/userResource/css/themify-icons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="../../static/userResource/css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="../../static/userResource/css/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../static/userResource/css/sweetalert.css">
+
+</head>
+
+<body>
+{% include 'user/header.html' %}
+<!-- /.header -->
+{% include 'user/menu.html' %}
+<!-- /.fixed-navbar -->
+
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-12">
+                <div class="box-content">
+                    <h4 class="box-title">Post Complain</h4>
+                    <form data-toggle="validator" action="/user/updateRegister" method="post">
+                        {% for i in registerVOList %}
+
+                            <input type="hidden" name="loginId" value="{{ i[1]['loginId'] }}">
+                            <input type="hidden" name="registerId" value="{{ i[0]['registerId'] }}">
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Firstname</label>
+                                <input type="text" class="form-control" name="registerFirstname"
+                                       value="{{ i[0]['registerFirstname'] }}" placeholder="Firstname" class="frm-inp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Lastname</label>
+                                <input type="text" class="form-control" name="registerLastname"
+                                       value="{{ i[0]['registerLastname'] }}" placeholder="Lastname" class="frm-inp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Address</label>
+                                <textarea name="registerAddress" class="form-control" placeholder="Address"
+                                          class="frm-inp">{{ i[0]['registerAddress'] }}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Contact Number</label>
+                                <input type="text" name="registerContactNumber" class="form-control"
+                                       value="{{ i[0]['registerContactNumber'] }}" placeholder="Contact Number"
+                                       class="frm-inp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Gender</label>
+                                <input type="radio" name="registerGender" value="Male"> Male
+                                <input type="radio" name="registerGender" value="Female"> Female
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complainSubject" class="control-label">Username</label>
+                                <input type="email" class="form-control" name="loginUsername"
+                                       value="{{ i[1]['loginUsername'] }}" placeholder="Username" class="frm-inp">
+                            </div>
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                            </div>
+                        {% endfor %}
+                    </form>
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row small-spacing -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- /.main-content -->
+</div><!--/#wrapper -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/userResource/js/jquery.min.js"></script>
+<script src="../../static/userResource/js/modernizr.min.js"></script>
+<script src="../../static/userResource/js/bootstrap.min.js"></script>
+<script src="../../static/userResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../static/userResource/js/nprogress.js"></script>
+<script src="../../static/userResource/js/sweetalert.min.js"></script>
+<script src="../../static/userResource/js/waves.min.js"></script>
+<!-- Sparkline Chart -->
+<script src="../../static/userResource/js/jquery.sparkline.min.js"></script>
+<script src="../../static/userResource/js/chart.sparkline.init.min.js"></script>
+
+<!-- Validator -->
+<script src="../../static/userResource/js/validator.min.js"></script>
+
+<script src="../../static/userResource/js/main.min.js"></script>
+<script src="../../static/userResource/js/mycommon.js"></script>
+</body>
+</html>

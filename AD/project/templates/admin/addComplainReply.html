@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AddReplay Complain-ActivitySpotter</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../../static/adminResource/css/style.min.css">
+    <link rel="stylesheet" href="../../static/adminResource/css/custom.css">
+
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../../static/adminResource/css/themify-icons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="../../static/adminResource/css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="../../static/adminResource/css/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../static/adminResource/css/sweetalert.css">
+
+</head>
+
+<body>
+{% include 'admin/header.html' %}
+    <!-- /.header -->
+    {% include 'admin/menu.html' %}
+<!-- /#message-popup -->
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-12">
+                <div class="box-content">
+                    <h4 class="box-title">Reply Complain</h4>
+                    <form data-toggle="validator" action="/admin/insertComplainReply" enctype="multipart/form-data" method="post">
+
+                            <input type="hidden" name="complainId" value="{{ complainId }}">
+
+                        <div class="form-group">
+                            <label for="replySubject" class="control-label">Replay Subject</label>
+                            <input type="text" class="form-control" name="replySubject"  required>
+                        </div>
+                        <div class="form-group">
+                            <label for="replyMessage" class="control-label">Reply Message</label>
+                            <textarea class="form-control" name="replyMessage"  required></textarea>
+                        </div>
+                       <div class="form-group">
+                            <label for="replyFile" class="control-label">Reply File:</label>
+                            <input type="file" class="form-control" name="replyFile" placeholder="Upload File">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row small-spacing -->
+        {% include 'admin/footer.html' %}
+    </div>
+    <!-- /.main-content -->
+</div><!--/#wrapper -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/adminResource/js/jquery.min.js"></script>
+<script src="../../static/adminResource/js/modernizr.min.js"></script>
+<script src="../../static/adminResource/js/bootstrap.min.js"></script>
+<script src="../../static/adminResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../static/adminResource/js/nprogress.js"></script>
+<script src="../../static/adminResource/js/sweetalert.min.js"></script>
+<script src="../../static/adminResource/js/waves.min.js"></script>
+<!-- Sparkline Chart -->
+<script src="../../static/adminResource/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResource/js/chart.sparkline.init.min.js"></script>
+
+<!-- Validator -->
+<script src="../../static/adminResource/js/validator.min.js"></script>
+
+<script src="../../static/adminResource/js/main.min.js"></script>
+<script src="../../static/adminResource/js/mycommon.js"></script>
+</body>
+</html>

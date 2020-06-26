@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Home - ActivitySpotter</title>
+
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="../../static/userResource/css/style.min.css">
+<link rel="stylesheet" href="../../static/userResource/css/custom.css">
+	
+	<!-- Themify Icon -->
+	<link rel="stylesheet" href="../../static/userResource/css/themify-icons.css">
+
+	<!-- mCustomScrollbar -->
+	<link rel="stylesheet" href="../../static/userResource/css/jquery.mCustomScrollbar.min.css">
+
+	<!-- Waves Effect -->
+	<link rel="stylesheet" href="../../static/userResource/css/waves.min.css">
+
+	<!-- Sweet Alert -->
+	<link rel="stylesheet" href="../../static/userResource/css/sweetalert.css">
+	
+	<!-- Percent Circle -->
+	<link rel="stylesheet" href="../../static/userResource/css/percircle.css">
+
+	<!-- Chartist Chart -->
+	<link rel="stylesheet" href="../../static/userResource/css/chartist.min.css">
+
+	<!-- FullCalendar -->
+	<link rel="stylesheet" href="../../static/userResource/css/fullcalendar.min.css">
+	<link rel="stylesheet" href="../../static/userResource/css/fullcalendar.print.css" media='print'>
+
+</head>
+
+<body>
+
+<!-- /.main-menu -->
+{% include 'user/menu.html' %}
+
+{% include 'user/header.html'   %}
+<!-- /.fixed-navbar -->
+
+
+<!-- /#message-popup -->
+<div id="wrapper">
+	<div class="main-content">
+		<!--<div class="row small-spacing">
+			<div class="col-xl-3 col-12">
+				<div class="box-content">
+					<div class="statistics-box with-icon">
+						<i class="ico ti-apple text-inverse"></i>
+						<h2 class="counter text-inverse">2561</h2>
+						<p class="text">Product Sales</p>
+					</div>
+				</div>
+
+				<div class="box-content">
+					<div class="statistics-box with-icon">
+						<i class="ico ti-android text-success"></i>
+						<h2 class="counter text-success">3562</h2>
+						<p class="text">Visitors</p>
+					</div>
+				</div>
+
+				<div class="box-content">
+					<div class="statistics-box with-icon">
+						<i class="ico ti-user text-primary"></i>
+						<h2 class="counter text-primary">283</h2>
+						<p class="text">Members</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-9 col-12">
+				<div class="box-content">
+					<h4 class="box-title">Statistics</h4>
+					<div id="svg-animation-chartist-chart" class="chartist-chart" style="height: 314px"></div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row small-spacing -->
+
+		<div class="row small-spacing">
+
+			<div class="col-xl-4 col-12">
+				<div class="box-content">
+					<h4 class="box-title text-info">Pending Complain</h4>
+					<!-- /.box-title -->
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+						<!-- /.sub-menu -->
+					</div>
+					<!-- /.dropdown js__dropdown -->
+					<div class="content widget-stat">
+						<div id="traffic-sparkline-chart-1" class="left-content margin-top-15"></div>
+						<!-- /#traffic-sparkline-chart-1 -->
+						<div class="right-content">
+							<h2 class="counter text-info">{{ pendingComplainCount }}</h2>
+							<!-- /.counter -->
+							<!--<p class="text text-info">Visitors Income</p>-->
+							<!-- /.text -->
+						</div>
+						<!-- .right-content -->
+					</div>
+					<!-- /.content widget-stat -->
+				</div>
+				<!-- /.box-content -->
+			</div>
+			<!-- /.col-xl-4 col-12 -->
+
+			<div class="col-xl-4 col-12">
+				<div class="box-content">
+					<h4 class="box-title text-success">Reply Complain</h4>
+					<!-- /.box-title -->
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+						<!-- /.sub-menu -->
+					</div>
+					<!-- /.dropdown js__dropdown -->
+					<div class="content widget-stat">
+						<div id="traffic-sparkline-chart-2" class="left-content margin-top-10"></div>
+						<!-- /#traffic-sparkline-chart-2 -->
+						<div class="right-content">
+							<h2 class="counter text-success">{{ repliedComplainCount }}</h2>
+							<!-- /.counter -->
+							<!--<p class="text text-success">Total Income</p>-->
+							<!-- /.text -->
+						</div>
+						<!-- .right-content -->
+					</div>
+					<!-- /.content widget-stat -->
+				</div>
+				<!-- /.box-content -->
+			</div>
+			<!-- /.col-xl-4 col-12 -->
+
+			<div class="col-xl-4 col-12">
+				<div class="box-content">
+					<h4 class="box-title text-success">Total Feedback</h4>
+					<!-- /.box-title -->
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+						<!-- /.sub-menu -->
+					</div>
+					<!-- /.dropdown js__dropdown -->
+					<div class="content widget-stat">
+						<div id="traffic-sparkline-chart-3" class="left-content"></div>
+						<!-- /#traffic-sparkline-chart-3 -->
+						<div class="right-content">
+							<h2 class="counter text-danger">{{ feedbackCount }}<i class="fa fa-usd"></i></h2>
+							<!-- /.counter -->
+							<!--<p class="text text-danger">Credit Earned</p>-->
+							<!-- /.text -->
+						</div>
+						<!-- .right-content -->
+					</div>
+					<!-- /.content widget-stat -->
+				</div>
+				<!-- /.box-content -->
+			</div>
+			<!-- /.col-xl-4 col-12 -->
+		</div>
+		<!-- /.row small-spacing -->
+
+		<!--<div class="row small-spacing">
+			<div class="col-xl-4 col-12">
+				<div class="box-content">
+					<h4 class="box-title">Activity</h4>
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div>
+					<div class="activity-list">
+						<div class="activity-item">
+							<div class="bar bg-primary">
+								<div class="dot bg-primary"></div>
+							</div>
+							<div class="content">
+								<div class="date">10 min</div>
+								<div class="text">
+									Harry has finished "Amaza HTML" task
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="bar bg-danger">
+								<div class="dot bg-danger"></div>
+							</div>
+							<div class="content">
+								<div class="date">15 min</div>
+								<div class="text">
+									You completed your task
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="bar bg-success">
+								<div class="dot bg-success"></div>
+							</div>
+							<div class="content">
+								<div class="date">30 min</div>
+								<div class="text">
+									New updated has been installed
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="bar bg-violet">
+								<div class="dot bg-violet"></div>
+							</div>
+							<div class="content">
+								<div class="date">1 hour ago</div>
+								<div class="text">Write some comments</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="bar bg-warning">
+								<div class="dot bg-warning"></div>
+							</div>
+							<div class="content">
+								<div class="date">1 day ago</div>
+								<div class="text">4 friends request accepted</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="bar bg-orange">
+								<div class="dot bg-orange"></div>
+								<div class="last-dot bg-orange"></div>
+							</div>
+							<div class="content">
+								<div class="date">12 days ago</div>
+								<div class="text">Daisy has joined your team</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="activity-link">View all activity <i class="fa fa-angle-down"></i></a>
+				</div>
+			</div>
+
+			<div class="col-xl-8 col-12">
+				<div class="box-content">
+					<h4 class="box-title">Purchases</h4>
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Product</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div>
+					<table class="table table-striped margin-bottom-10">
+						<thead>
+							<tr>
+								<th style="width:40%;">Product</th>
+								<th>Price</th>
+								<th>Date</th>
+								<th>State</th>
+								<th style="width:5%;"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Amaza Themes</td>
+								<td>$71</td>
+								<td>Nov 12,2016</td>
+								<td class="text-success">Completed</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Macbook</td>
+								<td>$142</td>
+								<td>Nov 10,2016</td>
+								<td class="text-danger">Cancelled</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Samsung TV</td>
+								<td>$200</td>
+								<td>Nov 01,2016</td>
+								<td class="text-warning">Pending</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Ninja Admin</td>
+								<td>$200</td>
+								<td>Oct 28,2016</td>
+								<td class="text-warning">Pending</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Galaxy Note 5</td>
+								<td>$200</td>
+								<td>Oct 28,2016</td>
+								<td class="text-success">Completed</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>CleanUp Themes</td>
+								<td>$71</td>
+								<td>Oct 22,2016</td>
+								<td class="text-success">Completed</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Facebook WP Plugin</td>
+								<td>$10</td>
+								<td>Oct 15,2016</td>
+								<td class="text-success">Completed</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Iphone 7</td>
+								<td>$100</td>
+								<td>Oct 12,2016</td>
+								<td class="text-warning">Pending</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Nova House</td>
+								<td>$100</td>
+								<td>Oct 12,2016</td>
+								<td class="text-warning">Pending</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							<tr>
+								<td>Repair Cars</td>
+								<td>$35</td>
+								<td>Oct 12,2016</td>
+								<td class="text-warning">Pending</td>
+								<td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>-->
+		<!-- /.row -->		
+	{% include 'user/footer.html' %}
+	</div>
+	<!-- /.main-content -->
+</div><!--/#wrapper -->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+	<!-- 
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../../static/userResource/js/jquery.min.js"></script>
+	<script src="../../static/userResource/js/modernizr.min.js"></script>
+	<script src="../../static/userResource/js/bootstrap.min.js"></script>
+	<script src="../../static/userResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../../static/userResource/js/nprogress.js"></script>
+	<script src="../../static/userResource/js/sweetalert.min.js"></script>
+	<script src="../../static/userResource/js/waves.min.js"></script>
+	<!-- Sparkline Chart -->
+	<script src="../../static/userResource/js/jquery.sparkline.min.js"></script>
+	<script src="../../static/userResource/js/chartparkline.init.min.js"></script>
+
+	<!-- Percent Circle -->
+	<script src="../../static/userResource/js/percircle.js"></script>
+
+	<!-- Google Chart -->
+	<script type="text/javascript" src="../../static/userResource/js/loader.js"></script>
+
+	<!-- Chartist Chart -->
+	<script src="../../static/userResource/js/chartist.min.js"></script>
+	<script src="../../static/userResource/js/jquery.chartist.init.min.js"></script>
+
+	<!-- FullCalendar -->
+
+	<script src="../../static/userResource/js/moment.js"></script>
+	<script src="../../static/userResource/js/fullcalendar.min.js"></script>
+	<script src="../../static/userResource/js/fullcalendar.init.js"></script>
+
+	<script src="../../static/userResource/js/main.min.js"></script>
+<script src="../../static/userResource/js/mycommon.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>View Dataset-ActivitySpotter</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../../static/adminResource/css/style.min.css">
+    <link rel="stylesheet" href="../../static/adminResource/css/custom.css">
+
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../../static/adminResource/css/themify-icons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="../../static/adminResource/css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="../../static/adminResource/css/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../static/adminResource/css/sweetalert.css">
+
+    <!-- Data Tables -->
+    <link rel="stylesheet" href="../../static/adminResource/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../static/adminResource/css/responsive.bootstrap.min.css">
+
+</head>
+
+<body>
+
+{% include 'admin/menu.html' %}
+
+{% include 'admin/header.html' %}
+
+<!-- /.header -->
+
+<!-- /.main-menu -->
+
+
+<!-- /.fixed-navbar -->
+
+<!-- /#message-popup -->
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-12">
+                <div class="box-content">
+                    <h4 class="box-title">View Dataset</h4>
+
+{#                    <!-- /.box-title -->#}
+{#                    <div class="dropdown js__drop_down">#}
+{#                        <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>#}
+{#                        <ul class="sub-menu">#}
+{#                            <li><a href="#">Action</a></li>#}
+{#                            <li><a href="#">Another action</a></li>#}
+{#                            <li><a href="#">Something else there</a></li>#}
+{#                            <li class="split"></li>#}
+{#                            <li><a href="#">Separated link</a></li>#}
+{#                        </ul>#}
+{#                        <!-- /.sub-menu -->#}
+{#                    </div>#}
+                    <!-- /.dropdown js__dropdown -->
+                    <table id="example" class="table table-striped table-bordered display" style="width:100%">
+                        <thead>
+                        <tr>
+
+                            <th>Dataset Filename</th>
+                            <th>Upload Date</th>
+                            <th>Upload Time</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for row in datasetVOList %}
+                            <tr>
+
+                                <td>{{ row['datasetFilename'] }}</td>
+
+                                <td>{{ row['datasetUploadDate'] }}</td>
+
+                                <td>{{ row['datasetUploadTime'] }}</td>
+
+                                <td><a href="{{row['datasetFilepath']}}{{row['datasetFilename']}} target=_blank">view</a> / <a
+                                        href="/admin/deleteDataset?datasetId={{row['datasetId']}}">Delete</a></td>
+
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row small-spacing -->
+        {% include 'admin/footer.html' %}
+    </div>
+    <!-- /.main-content -->
+</div><!--/#wrapper -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+<!--
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/adminResource/js/jquery.min.js"></script>
+<script src="../../static/adminResource/js/modernizr.min.js"></script>
+<script src="../../static/adminResource/js/bootstrap.min.js"></script>
+<script src="../../static/adminResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../static/adminResource/js/nprogress.js"></script>
+<script src="../../static/adminResource/js/sweetalert.min.js"></script>
+<script src="../../static/adminResource/js/waves.min.js"></script>
+<!-- Sparkline Chart -->
+<script src="../../static/adminResource/js/jquery.sparkline.min.js"></script>
+<script src="../../static/adminResource/js/chart.sparkline.init.min.js"></script>
+
+<!-- Data Tables -->
+<script src="../../static/adminResource/js/jquery.dataTables.min.js"></script>
+<script src="../../static/adminResource/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../static/adminResource/js/dataTables.responsive.min.js"></script>
+<script src="../../static/adminResource/js/responsive.bootstrap.min.js"></script>
+<script src="../../static/adminResource/js/datatables.demo.min.js"></script>
+
+<script src="../../static/adminResource/js/main.min.js"></script>
+<script src="../../static/adminResource/js/mycommon.js"></script>
+</body>
+</html>

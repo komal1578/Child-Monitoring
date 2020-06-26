@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AddReplay Complain-ActivitySpotter</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../../static/userResource/css/style.min.css">
+    <link rel="stylesheet" href="../../static/userResource/css/custom.css">
+
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../../static/userResource/css/themify-icons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="../../static/userResource/css/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="../../static/userResource/css/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../static/userResource/css/sweetalert.css">
+
+</head>
+<style>
+    {
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+</style>
+<body>
+{% include 'user/header.html' %}
+    <!-- /.header -->
+    {% include 'user/menu.html' %}
+<!-- /.fixed-navbar -->
+
+
+<!-- /#message-popup -->
+<div id="wrapper">
+    <div class="main-content">
+        <div class="row small-spacing">
+            <div class="col-12">
+                <div class="box-content" >
+                    <h4 class="box-title">Post Feedback</h4>
+                    <form data-toggle="validator" action="/user/insertFeedback"  method="post">
+                        <div class="form-group">
+                            <label for="feedbackSubject" class="control-label">Feedback Subject</label>
+                            <input class="form-control" name="feedbackSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedbackDescription" class="control-label">Feedback Description</label>
+                            <textarea class="form-control" name="feedbackDescription" required></textarea>
+                        </div>
+                        <div>
+                            <label for="replay" class="control-label">Feedback Rating</label>
+
+                        </div>
+                        <div>
+                            <div class="rate" name="feedbackRating">
+                                <input type="radio" id="star5" name="feedbackRating" value="5"/>
+                                <label for="star5" title="text">5 stars</label>
+                               <input type="radio" id="star4" name="feedbackRating" value="4"/>
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="feedbackRating" value="3"/>
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="feedbackRating" value="2"/>
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="feedbackRating" value="1"/>
+                                <label for="star1" title="text">1 stars</label>
+                            </div>
+                        </div><br><br><br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row small-spacing -->
+        {% include 'user/footer.html' %}
+    </div>
+    <!-- /.main-content -->
+</div><!--/#wrapper -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+		<script src="adminResource/js/html5shiv.min.js"></script>
+		<script src="adminResource/js/respond.min.js"></script>
+	<![endif]-->
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../static/userResource/js/jquery.min.js"></script>
+<script src="../../static/userResource/js/modernizr.min.js"></script>
+<script src="../../static/userResource/js/bootstrap.min.js"></script>
+<script src="../../static/userResource/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../static/userResource/js/nprogress.js"></script>
+<script src="../../static/userResource/js/sweetalert.min.js"></script>
+<script src="../../static/userResource/js/waves.min.js"></script>
+<!-- Sparkline Chart -->
+<script src="../../static/userResource/js/jquery.sparkline.min.js"></script>
+<script src="../../static/userResource/js/chart.sparkline.init.min.js"></script>
+
+<!-- Validator -->
+<script src="../../static/userResource/js/validator.min.js"></script>
+
+<script src="../../static/userResource/js/main.min.js"></script>
+<script src="../../static/userResource/js/mycommon.js"></script>
+</body>
+</html>
